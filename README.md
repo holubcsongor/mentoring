@@ -2,7 +2,7 @@
 This repository contains the lectures and codes for @kocskam
 
 ## Lessons
-### [Lesson 1](01_basic_types/Lesson1.md)
+### [Lesson 1](01_basic_types/Readme.md)
 #### Basic data types, modifiers
    - Representation of numbers
      - Integer types
