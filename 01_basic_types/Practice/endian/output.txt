@@ -1,2 +1,2 @@
 The input was in Big Endian format
-FF FE 1B 9C 91 24 05 FA 20 00 ED DE 78 F0
+FE FF 1B 9C 91 24 05 FA 20 00 ED DE 78 F0
