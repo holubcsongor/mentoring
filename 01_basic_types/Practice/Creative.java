@@ -15,8 +15,7 @@ public class Creative {
 		
 		//multable integer parameter passing
 		MutableInteger in_new = new MutableInteger(0);
-		in_new.increment();
-		
+		increment(in_new);
 		
 		System.out.println(in);
 		System.out.println(in_old);
@@ -24,8 +23,12 @@ public class Creative {
 		
 	}
 	
-	public static Integer increment(Integer i) {
-		return new Integer(i + 1);
+	public static void increment(Integer i) {
+		i++;
+	}
+
+	public static void increment(MutableInteger i) {
+		i.increment();
 	}
 	
 }
