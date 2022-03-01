@@ -6,21 +6,21 @@ import java.util.List;
 
 public class Color_converter {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
-		 List<String> colors = readConsole();
-		 System.out.println(colors);
+		List<String> colors = readConsole();
+//		 System.out.println(colors);
 
 		List<String> mensColors = null;
-		
+
 		try {
 			mensColors = mensColors(colors);
-			
+			System.out.println(mensColors);
+
 		} catch (NoRecordFoundException e) {
 			System.out.println("Empty table. I should write some kind of user-friendly message, but Im already in late from school xd");
 		}
-		
-		System.out.println(mensColors);
+
 	}
 
 	public static List<String> readConsole() {
@@ -42,15 +42,21 @@ public class Color_converter {
 		return colors;
 	}
 
-	public static List<String> mensColors(List<String> colors) throws NoRecordFoundException { // amúgy van vmi különbség, hogy én a paraméterben megadom a listát, vagy csak simán hivatkozok rá paraméterátadás nélkül?
+	public static List<String> mensColors(List<String> colors) throws NoRecordFoundException { // amúgy van vmi
+																								// különbség, hogy én a
+																								// paraméterben megadom
+																								// a listát, vagy csak
+																								// simán hivatkozok rá
+																								// paraméterátadás
+																								// nélkül?
 		List<String> dummyColors = new ArrayList<String>();
 
 		if (colors.isEmpty()) {
-			throw NoRecordFoundException;
+			throw new NoRecordFoundException("Empty table.");
 		}
-		
+
 		for (var color : colors) {
-			
+
 			switch (String.valueOf(color)) {
 			case "cherry":
 			case "cinammon":
@@ -94,8 +100,8 @@ public class Color_converter {
 			case "sky":
 			case "torquolse":
 				dummyColors.add("blue");
-				break;	
-			default:  //kötelezõ amúgy a def, mert ilyen esetben nem tudok mit írni bele?			
+				break;
+			default: // kötelezõ amúgy a def, mert ilyen esetben nem tudok mit írni bele?
 			}
 		}
 
