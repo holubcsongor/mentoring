@@ -1,6 +1,6 @@
 
 public class NoRecordFoundException extends Exception {
-	public NoRecordFoundException(String errorMessage) {
-		super(errorMessage);
+	public NoRecordFoundException() {
+		super("Empty table");
 	}
 }
