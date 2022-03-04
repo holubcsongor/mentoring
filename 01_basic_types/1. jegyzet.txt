@@ -1,0 +1,23 @@
+00110011 11111111
+ 13311
+ 65331
+ 255 65555
+
+Little endian
+00110011 11111111
+
+Big endian
+11111111 00110011
+
+LSB, MSB (least significant , most...); 
+	LSB - little endian: the least significant is on the smaller address, so it begins with the little
+x86: little, arm: big endian, ip/tcp: big endian
+
+00101100    2.4
+
+001 - 1.
+0 . 
+1100 1/2+1/4
+0.75
+
+0.1
