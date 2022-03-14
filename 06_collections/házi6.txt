@@ -1,0 +1,26 @@
+autószervíz, cpu-pipeline jelleggel, fifo módra:
+- (végtelen sor a szervíz előtt)
+- 1 adminisztráció (adatfelvétel)
+- 1 autó (hiba) elemzése [kárfelmérés]
+- 2 külön szervíz
+- átadás/átvétel/fizetés
+
+mindegyik lépésnél adott időt tölt az autó, szervíz nem fix idő, minden más az.
+elemzésnél lehet megállapítani, hogy valamely mérőműszerre picit várni kell,
+  így a sor végére vissza lehet küldeni az autót, de csak egyszer (per autó)
+Mindegyik részleg 1 autóval tud foglalkozni,
+	így csak akkor mehet tovább, ha a következő szakember épp üres.
+A szervíz csak becsületes embert szolgál ki, nincs tolakodás, 
+	sorban mindig az első mehet tovább.
+A szervíz mégsem képes elhárítani a hibát és feladják (szervíz fázisban),
+	 (exception), ekkor ingyen van,
+	egyébként a szervízben töltött óra alapján szorzat.
+	Ha túl nagy munka esetén sor végére küldik vissza, az nem növeli az árat,
+	vagyis az összeg akkor nullázódik.
+Ha nagyon üres a szervíz, mindkét szerelő dolgozhat ugyanazon az autón,
+	de nem feleződik a szerelés ideje, hanem 30%-kal csökken csak 
+	(felső egészrész lesz a szükséges idő tört esetén)
+Átvételnél a vevő reklamálhat valamire, ekkor az egyik szerelőhöz megy vissza rögtön,
+	amint az egyik üres lesz (bevágva a felmérésről jövő autó elé)
+
+ 
