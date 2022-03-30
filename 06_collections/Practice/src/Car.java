@@ -1,34 +1,36 @@
-
+/**
+ * 
+ * @author Kami
+ *
+ */
 public class Car {
 
-	private static int time;
-	private static String type;
+	private int time;
+	private String type;
 	
 	public Car(String type) {
 		this.type = type;
 	}
 	
-	public static int getTime() {
+	public int getTime() {
 		return time;
 	}
 
 	public void setTime(int time) {
-		Car.time = time;
+		this.time = time;
 	}
 
-	public static String getType() {
+	public String getType() {
 		return type;
 	}
 
-	public static void setType(String type) {
-		Car.type = type;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	@Override
 	public String toString() {
 		return type;
 	}
-	
-	
 	
 }

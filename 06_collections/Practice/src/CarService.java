@@ -1,19 +1,28 @@
 import java.util.ArrayList;
 import java.util.Random;
-
+/**
+ * 
+ * @author Kami
+ * The service for the application.
+ */
 public class CarService {
-//TODO
-	private static ArrayList<Car> customers;
-	
-	public static Boolean damageAssessmentSuccessful(Car car) {
+	/**
+	 * Returns whether the damage assessment was successful.
+	 * @param car
+	 * @return Boolean
+	 */
+	public Boolean damageAssessmentSuccessful(Car car) {
 		if ((new Random().nextInt(100)) % 5 == 0) {
 			return false;
 		}
 		return true;
-
 	}
-
-	public static void isItPreparable(Car car) throws MechanicUnableToFixIt {
+	/**
+	 * Returns whether the car is repairable.
+	 * @param car
+	 * @throws MechanicUnableToFixIt
+	 */
+	public void isItRepairable(Car car) throws MechanicUnableToFixIt {
 		if ((new Random().nextInt(100)) % 7 == 0) {
 			throw new MechanicUnableToFixIt();
 		}
