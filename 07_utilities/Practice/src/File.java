@@ -1,9 +1,8 @@
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * @author Kami
@@ -17,34 +16,43 @@ public class File {
 	//2 final variable which given the starting and ending tag for the file reading
 	final static String BEGINS_WITH = "<body";
 	final static String ENDS_WITH = "</body>";
+	//declare an array to save the html script
+	static ArrayList<String> script = new ArrayList<>();
+	
+	
+	public void saveToArray(String line) {
+
+		//starts saving if <body tag is in the line
+		if (line.contains(BEGINS_WITH)) {
+			isInBody = true;
+			line = readUntil(line, BEGINS_WITH);
+		}
+
+		if (isInBody) {
+			//stop saving after </body> tag is in the line
+			if (line.contains(ENDS_WITH)) {
+				isInBody = false;
+				line = readUntil(line, ENDS_WITH);
+			}
+			script.add(line);
+		}
+	}
 	
 	/**
 	 * This method creates a defined txt, contains the html content in range of the begin and ending parameter.
 	 * @param line The line from the reading.
 	 * @param url This parameter contains the name of the txt file.
 	 */
-	public void writeToFile(String line, URL url) {
+	public void writeToFile(ArrayList<String> script, URL url) {
 
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(txtName(url), true)); // TODO újrafuttatásnál törölje a tartalmat, megoldás: eltárolom majd utoljára írom ki
 
-			//starts reading if <body tag is in the line
-			if (line.contains(BEGINS_WITH)) {
-				isInBody = true;
-				line = readUntil(line, BEGINS_WITH);
+			for (String arrayLine : script) {
+				writer.append(arrayLine);
 			}
-
-			if (isInBody) {
-				//stop reading after </body> tag is in the line
-				if (line.contains(ENDS_WITH)) {
-					isInBody = false;
-					line = readUntil(line, ENDS_WITH);
-				}
-				//append the lines that are in the body tag
-				writer.append(line + "\n"); // ? nem megterhelõ így, h mindig megnyitja és bemásolja?
-				writer.close();
-			}
-
+			writer.close();
+			
 		} catch (IOException e) {
 			System.out.println("File reading failed.");
 		}
