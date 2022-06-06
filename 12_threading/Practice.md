@@ -25,7 +25,7 @@ You will create a multi-threaded application, which will generate random numbers
 
 ##### Consumer Thread
 - This thread shall read out the **shared** List, and print out the items to the console!
- -The thread shall wait **passively** if no item is in the List, until the other thread awakens it!
+- The thread shall wait **passively** if no item is in the List, until the other thread **awakens** it!
 - This thread will force the Generator thread to stop, after some number is generated (constant int, which is defined at a class level, defaulted to 100)!
 
 
