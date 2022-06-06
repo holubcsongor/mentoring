@@ -30,7 +30,7 @@ You will create a multi-threaded application, which will generate random numbers
 
 
 #### Restrictions
-- You shall not use Collections.Synchronized...., only not safe thread built-in classes! (ArrayList, LinkedList, or similar, you may choose)
+- You shall not use Collections.Synchronized...., only not thread-safe built-in classes! (ArrayList, LinkedList, or similar, you may choose)
 - You shall manually lock every thread-critical/shared object!
 - You may create "dummy" objects, parameterized constructors, any other functions, as you wish!
 
